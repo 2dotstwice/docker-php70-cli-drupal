@@ -11,6 +11,7 @@ drush -y updb;
 # Config sync
 if [ -e ./core ]; then
   drush en -y config_split || true;
+  drush cc drush || true;
   drush csim -y || true;
 fi
 
